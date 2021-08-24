@@ -1,0 +1,19 @@
+body {
+    background-color: #eee !important;
+}
+
+h1 > a {
+    color: #212529 !important;
+    text-decoration: none !important;
+}
+
+.btn-warning {
+    color: #fff !important;
+    border-color: #ffa900 !important;
+    background-color: #ffa900 !important;
+}
+
+.btn-secondary {
+    border-color: #4c5155 !important;
+    background-color:#4c5155 !important;
+}
