@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+    <a class="btn btn-primary btn-lg me-md-2" href="{% url 'create-task' %}" role="button">Criar nova tarefa</a>
+    <a class="btn btn-warning btn-lg me-md-2" href="{% url 'completed-tasks' %}" role="button">Concluídas</a>
+    <a class="btn btn-secondary btn-lg" href="{% url 'pendent-tasks' %}" role="button">Pendentes</a>
+</div>
+
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th class="col-6 fs-3 lead"><strong>Tarefas</strong></th>
+            <th class="col-2 fs-3 text-center lead"><strong>Status</strong></th>
+            <th class="col-2 fs-3 text-center lead"><strong>Data</strong></th>
+            <th class="col-2 fs-3 text-center lead"><strong>Ações</strong></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td class="fs-6 lead">{{ task.description }}</td>
+            <td class="fs-6 text-center lead">{{ task.status }}</td>
+            <td class="fs-6 text-center lead">{{ task.creation_date }}</td>
+            <td class="text-center">
+                <a class="btn btn-success" href="{% url 'update-task' task.id %}" role="button">Concluir</a>
+                <a class="btn btn-danger ms-2" href="{% url 'delete-task' task.id %}" role="button">Apagar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td class="text-center fs-5 lead" colspan="4">
+                Sua lista de tarefas está vazia!
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
