@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-    <a class="btn btn-primary btn-lg me-md-2" href="{% url 'create-task' %}" role="button">Criar nova tarefa</a>
-    <a class="btn btn-warning btn-lg me-md-2" href="{% url 'completed-tasks' %}" role="button">Concluídas</a>
-    <a class="btn btn-secondary btn-lg" href="{% url 'pendent-tasks' %}" role="button">Pendentes</a>
+    <a class="btn btn-primary me-md-2" href="{% url 'create-task' %}" role="button">Criar nova tarefa</a>
+    <a class="btn btn-warning me-md-2" href="{% url 'completed-tasks' %}" role="button">Concluídas</a>
+    <a class="btn btn-secondary" href="{% url 'pendent-tasks' %}" role="button">Pendentes</a>
 </div>
 
 <table class="table table-hover mt-4">
@@ -24,11 +24,11 @@
             <td class="fs-6 text-center lead">{{ task.status }}</td>
             <td class="fs-6 text-center lead">{{ task.creation_date }}</td>
             <td class="text-center">
-                <a class="btn btn-success" title="Editar tarefa" href="{% url 'update-description-task' task.pk %}"
+                <a class="btn btn-success" title="Editar tarefa" href="{% url 'update-description-task' task.id %}"
                     role="button"><i class="bi bi-pencil-square"></i></a>
-                <a class="btn btn-success ms-1" title="Concluir tarefa" href="{% url 'update-status-task' task.pk %}"
+                <a class="btn btn-success ms-1" title="Concluir tarefa" href="{% url 'update-status-task' task.id %}"
                     role="button"><i class="bi bi-check2-square"></i></a>
-                <a class="btn btn-danger ms-1" title="Apagar tarefa" href="{% url 'delete-task' task.pk %}"
+                <a class="btn btn-danger ms-1" title="Apagar tarefa" href="{% url 'delete-task' task.id %}"
                     role="button"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
