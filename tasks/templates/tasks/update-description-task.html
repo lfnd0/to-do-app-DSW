@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}To-Do App – Criar tarefa{% endblock %}
+{% block title %}To-Do App – Atualizar tarefa{% endblock %}
 
 {% block content %}
 <form class="mt-4" method="POST">
     {% csrf_token %}
     {{ form }}
-    <button class="btn btn-primary" type="submit">Criar tarefa</button>
+    <button class="btn btn-primary" type="submit">Atualizar tarefa</button>
 </form>
 
 <div class="text-center">

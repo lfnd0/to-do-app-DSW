@@ -11,9 +11,9 @@
     <thead>
         <tr>
             <th class="col-6 fs-3 lead"><strong>Tarefas</strong></th>
-            <th class="col-2 fs-3 text-center lead"><strong>Status</strong></th>
-            <th class="col-2 fs-3 text-center lead"><strong>Data</strong></th>
-            <th class="col-2 fs-3 text-center lead"><strong>Ações</strong></th>
+            <th class="col-1 fs-3 text-center lead"><strong>Status</strong></th>
+            <th class="col-3 fs-3 text-center lead"><strong>Data</strong></th>
+            <th class="col-3 fs-3 text-center lead"><strong>Ações</strong></th>
         </tr>
     </thead>
 
@@ -24,9 +24,11 @@
             <td class="fs-6 text-center lead">{{ task.status }}</td>
             <td class="fs-6 text-center lead">{{ task.creation_date }}</td>
             <td class="text-center">
-                <a class="btn btn-success" href="{% url 'update-task' task.id %}" role="button"><i
+                <a class="btn btn-success" href="{% url 'update-description-task' task.pk %}" role="button"><i
+                        class="bi bi-pencil-square"></i></a>
+                <a class="btn btn-success ms-1" href="{% url 'update-status-task' task.pk %}" role="button"><i
                         class="bi bi-check2-square"></i></a>
-                <a class="btn btn-danger ms-2" href="{% url 'delete-task' task.id %}" role="button"><i
+                <a class="btn btn-danger ms-1" href="{% url 'delete-task' task.pk %}" role="button"><i
                         class="bi bi-trash"></i></a>
             </td>
         </tr>
