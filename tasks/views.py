@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.shortcuts import get_object_or_404, redirect, render
 
 from tasks.models import Task
@@ -20,15 +21,36 @@ class TaskCreateView(CreateView):
     success_url = reverse_lazy('list-tasks')
 
 
-def update_task(request, id):
-    task = get_object_or_404(Task, pk=id)
-    task.status = 'Concluída'
-    task.save()
+def update_description_task(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    form = TaskModelForm(instance=task)
+
+    if(request.method == 'POST'):
+        form = TaskModelForm(request.POST, instance=task)
+        if(form.is_valid()):
+            task.status = 'Pendente'
+            task.creation_date = timezone.now()
+            task.save()
+            return redirect('list-tasks')
+        else:
+            return render(request, 'tasks/update-description-task.html', {'form': form, 'task': task})
+    else:
+        return render(request, 'tasks/update-description-task.html', {'form': form, 'task': task})
+
+
+def update_status_task(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+
+    if(task.status == 'Pendente'):
+        task.status = 'Concluída'
+        task.creation_date = timezone.now()
+        task.save()
+
     return redirect('list-tasks')
 
 
-def delete_task(request, id):
-    task = get_object_or_404(Task, pk=id)
+def delete_task(request, pk):
+    task = get_object_or_404(Task, pk=pk)
     task.delete()
     return redirect('list-tasks')
 
