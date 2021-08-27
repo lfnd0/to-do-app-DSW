@@ -24,12 +24,12 @@
             <td class="fs-6 text-center lead">{{ task.status }}</td>
             <td class="fs-6 text-center lead">{{ task.creation_date }}</td>
             <td class="text-center">
-                <a class="btn btn-success" href="{% url 'update-description-task' task.pk %}" role="button"><i
-                        class="bi bi-pencil-square"></i></a>
-                <a class="btn btn-success ms-1" href="{% url 'update-status-task' task.pk %}" role="button"><i
-                        class="bi bi-check2-square"></i></a>
-                <a class="btn btn-danger ms-1" href="{% url 'delete-task' task.pk %}" role="button"><i
-                        class="bi bi-trash"></i></a>
+                <a class="btn btn-success" title="Editar tarefa" href="{% url 'update-description-task' task.pk %}"
+                    role="button"><i class="bi bi-pencil-square"></i></a>
+                <a class="btn btn-success ms-1" title="Concluir tarefa" href="{% url 'update-status-task' task.pk %}"
+                    role="button"><i class="bi bi-check2-square"></i></a>
+                <a class="btn btn-danger ms-1" title="Apagar tarefa" href="{% url 'delete-task' task.pk %}"
+                    role="button"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
         {% empty %}
