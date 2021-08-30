@@ -4,7 +4,7 @@
 ## To-Do App
 
 ### Sobre o projeto
-Esta é uma aplicação web de listas de tarefas com [Django Web Framewok](https://www.djangoproject.com/) e [Bootstrap](https://getbootstrap.com/), em que o usuário pode adicionar atividades que deseja realizar.
+Esta é uma aplicação web de lista de tarefas com [Django Web Framewok](https://www.djangoproject.com/) e [Bootstrap](https://getbootstrap.com/), em que o usuário pode adicionar atividades que deseja realizar.
 
 ### Recursos
   * Adicionar uma nova tarefa.
