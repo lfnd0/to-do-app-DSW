@@ -4,8 +4,8 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.shortcuts import get_object_or_404, redirect, render
 
-from tasks.models import Task
-from tasks.forms import TaskModelForm
+from .models import Task
+from .forms import TaskModelForm
 
 
 class TasksListView(ListView):
@@ -25,15 +25,13 @@ def update_description_task(request, id):
     task = get_object_or_404(Task, pk=id)
     form = TaskModelForm(request.POST or None, instance=task)
 
-    if(task.status == 'Pendente'):
-        if(form.is_valid()):
-            task.creation_date = timezone.now()
-            task.save()
-            return redirect('list-tasks')
-        else:
-            return render(request, 'tasks/update-description-task.html', {'form': form, 'task': task})
-    else:
+    if(form.is_valid()):
+        task.status = 'Pendente'
+        task.creation_date = timezone.now()
+        task.save()
         return redirect('list-tasks')
+    else:
+        return render(request, 'tasks/update-description-task.html', {'form': form, 'task': task})
 
 
 def update_status_task(request, id):
