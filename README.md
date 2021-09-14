@@ -20,6 +20,3 @@ Esta é uma aplicação web de lista de tarefas com [Django Web Framewok](https:
   3. Instalação das dependências: `pip install -r requirements.txt`.
   4. Migração dos modelos: `python manage.py migrate`
   5. Execução: `python manage.py runserver`.
-
-### Discente
-  * [Luiz Fernando](https://github.com/lfnd0/)
