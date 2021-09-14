@@ -18,5 +18,5 @@ Esta é uma aplicação web de lista de tarefas com [Django Web Framewok](https:
   1. Criação do ambiente virtual: `python -m venv .venv`.
   2. Ativação do ambiente virtual: `.venv\Scripts\activate`.
   3. Instalação das dependências: `pip install -r requirements.txt`.
-  4. Migração dos modelos: `python manage.py migrate`
+  4. Migração dos modelos: `python manage.py migrate`.
   5. Execução: `python manage.py runserver`.
