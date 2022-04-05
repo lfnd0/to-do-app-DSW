@@ -5,6 +5,10 @@
   <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-v.5.1.0-blueviolet">
 </p>
 
+<p align="center">
+  <img alt="To-Do App" src="./.github/to-do-app.png">
+</p>
+
 ## :hammer_and_wrench: Tecnologias
 - [Django](https://docs.djangoproject.com/en/3.2/)
 - [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
@@ -26,3 +30,6 @@ Esta é uma aplicação web de lista de tarefas com Django Web Framewok e Bootst
 - Apagar uma tarefa.
 - Listar todas as tarefas.
 - Listar todas as tarefas concluídas/pendentes.
+
+## :page_facing_up: Licença
+Este projeto está sob a [licença MIT](LICENSE).
