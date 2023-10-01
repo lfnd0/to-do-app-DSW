@@ -1,4 +1,4 @@
-<h1 align="center">To-Do App</h1>
+<h1 align="center">Todo Web App</h1>
 
 <p align="center">
   <img alt="Django" src="https://img.shields.io/badge/django-v.3.2.6-brightgreen">
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img alt="To-Do App" src="./.github/to-do-app.png">
+  <img alt="Todo Web App" src="./.github/to-do-app.png">
 </p>
 
 ## :hammer_and_wrench: Tecnologias
